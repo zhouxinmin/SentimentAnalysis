@@ -1,0 +1,25 @@
+{% load staticfiles %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>方案评价系统</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+        <script src="{% static 'bootstrap/jquery.min.js' %}"></script>
+        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+        <link href="{% static 'css/index.css' %}" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+    <div class="container">
+      <form class="form-signin" role="form" action="" method="post">
+          {% csrf_token %}
+          <div id="head"><img src="{% static 'img/LOGO.png' %}"/></div>
+          <h2 class="form-signin-heading">请登录</h2>
+          <input name="username" type="text" class="form-control" placeholder="用户名" required autofocus>
+          <input name="password" type="password" class="form-control" placeholder="Password" required>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">登陆</button>
+      </form>
+    </div>
+        <div id="base">2016 南京航空航天大学经济与管理学院. All Rights Reserved<br />强烈建议您使用Chrome Firefox IE9以上浏览器使用本系统</div>
+    </body>
+</html>
