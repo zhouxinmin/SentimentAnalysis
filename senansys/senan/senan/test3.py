@@ -2,7 +2,6 @@
 import jieba
 import numpy as np
 from sklearn.naive_bayes import GaussianNB
-from sklearn.neural_network import
 from sklearn.externals import joblib
 import pickle
 import sys
