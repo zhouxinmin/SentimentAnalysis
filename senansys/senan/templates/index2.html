@@ -1,10 +1,21 @@
 {% extends 'base/main_base.html' %}
+{% load staticfiles %}
 {% block content %}
-    <div>
-    {{ res.predict }}
+    <h2>情感值：</h2>
+    <div class="row">
+        <div class="col-md-6 placeholder">
+            <label>积极值：</label>
+            <div id="pos" class="progress">
+                <div class="progress-bar {{ res.predict.0 }}"  role="progressbar" aria-valuenow="20"
+                     aria-valuemin="0" aria-valuemax="100" style="width:{{ res.predict.1 }}">
+                    {{ res.predict.2 }}
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}
 {#<form method="post">#}
 {#    {% csrf_token %}#}
 {#    {{ form.predict }}#}
 {#</form>#}
+{{ res.predict }}

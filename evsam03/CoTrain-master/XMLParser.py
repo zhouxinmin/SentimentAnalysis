@@ -7,16 +7,14 @@ import xml.dom.minidom
 import copy
 
 
-
 class XMLParser:
-
     def __get_attr(self, item):
         item_data = {}
-        attr_list=['review_id','summary','text','category','polarity']
+        attr_list = ['review_id', 'summary', 'text', 'category', 'polarity']
         for attr in attr_list:
-            nodes=item.getElementsByTagName(attr)
-            if len(nodes)>0 and len(nodes[0].childNodes)>0:
-                item_data[attr]=nodes[0].childNodes[0].nodeValue
+            nodes = item.getElementsByTagName(attr)
+            if len(nodes) > 0 and len(nodes[0].childNodes) > 0:
+                item_data[attr] = nodes[0].childNodes[0].nodeValue
         return item_data
 
     def parse(self, filename):

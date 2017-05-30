@@ -1,7 +1,6 @@
-#!/usr/bin/env python
+ #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Author: gaojianbo@pku.edu.cn
 
 import copy, json
 from jieba import posseg
@@ -51,7 +50,6 @@ class CoTrain:
 
         self.transformer_cn=TfidfTransformer()
         self.transformer_en=TfidfTransformer()
-
 
     def read_data(self):
         # Read data from file
@@ -148,7 +146,6 @@ class CoTrain:
 
                 jieba_timer.finish()
 
-
         for i in xrange(4):
             summary=[]
             text=[]
@@ -178,7 +175,6 @@ class CoTrain:
             goals[i]=copy.deepcopy(goal)
 
             print "vec %d size: %s" % (i, str(vecs[i].shape))
-
 
     def vectorize(self, use_jieba=True):
         # Vectorize all data
@@ -221,7 +217,6 @@ class CoTrain:
 
         timer.finish()
 
-
     def test(self):
         # Test with test_vec_en/cn
         timer=Timer("testing")
@@ -231,7 +226,6 @@ class CoTrain:
         self.predict_cn, self.proba_cn = self.__test_model(self.classifier_cn, self.vec_cn[3])
 
         timer.finish()
-
 
     def cotrain(self, n=5, p=5):
         # 1. Test with unlabel_vec_en/cn
@@ -377,8 +371,6 @@ class CoTrain:
         return results
 
 
-
-
 def main(iterator_times):
     timer=Timer("CoTraining")
     timer.start()
@@ -414,10 +406,6 @@ def main(iterator_times):
             print e
 
     timer.finish()
-
-
-
-
 
 if __name__ == '__main__':
     main(40)

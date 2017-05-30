@@ -6,15 +6,16 @@
 import os, sys
 
 ROOT_DIR=os.path.abspath(os.path.dirname(sys.argv[0]))
-
+print ROOT_DIR
 
 DATA_DIR=os.path.join(ROOT_DIR, "data")
+print DATA_DIR
 TRAIN_DATA_DIR="Train_EN"
 UNLABEL_DATA_DIR="Unlabel_CN"
 VALIDATION_DATA_DIR="Train_CN"
 TEST_DATA_DIR="Test_CN"
 
-TRAIN_DATA_BOOK=os.path.join(DATA_DIR,TRAIN_DATA_DIR,"book","train.data")
+TRAIN_DATA_BOOK=os.path.join(DATA_DIR,TRAIN_DATA_DIR, "book", "train.data")
 TRAIN_DATA_DVD=os.path.join(DATA_DIR,TRAIN_DATA_DIR,"dvd","train.data")
 TRAIN_DATA_MUSIC=os.path.join(DATA_DIR,TRAIN_DATA_DIR,"music","train.data")
 

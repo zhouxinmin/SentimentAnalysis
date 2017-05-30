@@ -4,6 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.shortcuts import render
 from senan import test3
+from senan import snowNlp
 from django.http import HttpResponse
 # from senan.models import *
 
@@ -102,7 +103,8 @@ def assess(request):
         if qes.is_valid():
             sen = qes.cleaned_data['content']
             sentence = str(sen)
-            res = test3.script_run(sentence)
+            # res = test3.script_run(sentence)
+            res = snowNlp.get_mood(sentence)
             return render(request, 'index2.html', {'res': res})
         else:
             print "Failed!"
