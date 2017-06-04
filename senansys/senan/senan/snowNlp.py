@@ -13,11 +13,13 @@ from snownlp import SnowNLP
 
 def cal_hold_press(value):
     value *= 100
-    if 0 <= value <= 50:
+    if 0 <= value <= 60:
         return "progress-bar-danger"
-    elif 50 < value <= 70:
-        return "progress-bar-info"
-    elif 70 < value <= 85:
+    elif 60 < value <= 70:
+        return "progress-bar-warning"
+    elif 70 < value <= 80:
+        return "progress-bar-secondary"
+    elif 80 < value <= 90:
         return "progress-bar-success"
     elif 100 < value:
         return "progress-bar-danger"
